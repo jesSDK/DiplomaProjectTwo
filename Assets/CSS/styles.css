@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300&display=swap');
+body {
+    font-family: Quicksand, sans-serif;
+    font-weight: 300;
+    color: #3a3a3a;
+    background-color: #FA80B5;
+
+}

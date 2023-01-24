@@ -1,3 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-</html>>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Assets/CSS/styles.css"> <!--Our own styles-->
+        <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"><!--Font awesome styles/icons-->
+        <title>DiplomaProjectTwo</title>
+    </head>
+    <body>
+        <h1 class="header">
+            <img class="logo" src="/Assets/Images/Logo.png" alt="logo"> Kuromi Kards
+        </h1>
+        <div class="Game-flex"><!--Main game flexbox-->
+            <div class="controls">
+                <buton class ="btn btn-reg btn-start"><i class="fa-solid fa-play"></i></buton>
+                <buton class ="btn btn-reg btn-restart"><i class="fa-solid fa-repeat"></i></buton>
+            </div>
+        </div>
+        <div class="Score-flex"><!--Score flexbox-->
+            <p class="scores">Score <span id="score">0</span></p>
+        </div>  
+        <script src="/Assets/JS/script.js"></script>
+    </body>
+</html>
