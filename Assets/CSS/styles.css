@@ -4,5 +4,83 @@ body {
     font-weight: 300;
     color: #3a3a3a;
     background-color: #FA80B5;
+}
+body p {
+    font-family: Quicksand, sans-serif;
+    font-weight: 300;
+    color: #3a3a3a;
+    font-size: 150%;
+}
 
+.logo{
+    height: 80px;
+}
+/*Game board and card styling*/
+.Game-flex{
+    display: flex;
+    justify-content: center;
+    margin-right: 33%;
+    margin-left: 33%;
+    height: 700px;
+}
+
+.card{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.cardFront, .cardBack{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #3a3a3a;
+    transition: transform .5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.cardBack{
+    font-size: 28pt;
+    text-align: center;
+    line-height: 100px;
+    background-color: #3a3a3a;
+    transform: rotateY('180') rotateZ('50');
+    user-select: none;
+}
+
+.card.flipped .card-front{
+    transform: rotateY('180') rotateZ('50');
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.cardBack > img{
+    height: 66px;
+    width: 66px;
+    
+}
+/*Button Styling*/
+button{
+    cursor: pointer;
+}
+.btn--start{
+
+}
+
+.btn{
+
+}
+
+.btn--reg{
+    height: 1000px;
+    width: 1000px;
+
+}
+
+.controls{
+    justify-content:start;
 }

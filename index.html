@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/Assets/CSS/styles.css"> <!--Our own styles-->
-        <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"><!--Font awesome styles/icons-->
+        <script src="https://kit.fontawesome.com/9ca8dc6e67.js" crossorigin="anonymous"></script><!--Font awesome styles/icons-->
         <title>DiplomaProjectTwo</title>
     </head>
     <body>
@@ -14,12 +13,20 @@
         </h1>
         <div class="Game-flex"><!--Main game flexbox-->
             <div class="controls">
-                <buton class ="btn btn-reg btn-start"><i class="fa-solid fa-play"></i></buton>
-                <buton class ="btn btn-reg btn-restart"><i class="fa-solid fa-repeat"></i></buton>
+                <buton class ="btn btn--reg btn-start"><i class="fa-solid fa-play"></i></buton>
+                <buton class ="btn btn--reg btn-restart"><i class="fa-solid fa-repeat"></i></buton>
             </div>
+            <div class="game-board">
+                <div class="board" data-dimension="4">
+                    <div class="card">
+                        <div class="cardFront"></div>  
+                        <div class="cardBack"></div>
+                </div>
+                <div class="completed">Congratulations!</div>
         </div>
         <div class="Score-flex"><!--Score flexbox-->
-            <p class="scores">Score <span id="score">0</span></p>
+            <p class="scores">Score: <span id="score">0</span></p>
+            <p class="moves">Moves: <span id="moves">0</span></p>
         </div>  
         <script src="/Assets/JS/script.js"></script>
     </body>
