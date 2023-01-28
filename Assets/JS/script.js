@@ -13,6 +13,8 @@ const state = { //Variables for keeping track of various parts of the game
     gameStarted: false,
     flippedCards: 0,
     totalMoves: 0,
+    totalTime: 0,
+    loop: null
 };
 
 //Create an array with the card icons
@@ -40,7 +42,7 @@ cardImages.push(kuromiEight,kuromiSeven, kuromiSix, kuromiFive, kuromiFour, kuro
 
 console.log(cardImages);
 
-const pickRandom = (array, items) => {
+const pickRandom = (array, items) => { //Pick a random selection of ocards from our array
     console.log("pick random");
     const clonedArray = [...array];
     const randomCards = [];
@@ -63,13 +65,13 @@ const createGame = () => {
     }
 
     const randomCards = pickRandom(cardImages, (dimensions * dimensions) / 2);
-
-
+    const shuffledCards = shuffle([...randomCards, ...randomCards]); //we use the shuffle to ensure there are pairs
+    //insert our grid of cards with the now shuffled cards 
     const cards = `<div class="board" style="grid-template-columns: repeat(${dimensions}, auto)">
-    ${randomCards.map(item => `
+    ${shuffledCards.map(item => `
         <div class="card">
-            <div class="card-front"><img src="${item.src}"></div>
-            <div class="card-back"></div>
+            <div class="card-front"></div>
+            <div class="card-back"><img src="${item.src}"></div>
         </div>
     `).join('')}
 </div>`
@@ -80,26 +82,44 @@ const domParser = new DOMParser().parseFromString(cards, 'text/html');
 classSelectors.board.replaceWith(domParser.querySelector('.board'));
 };
 
-const events = () =>{
-    document.addEventListener('click', event =>{
-        const eventTarget = event.target;
-        const eventParent = eventTarget.parentElement;
 
-        if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')){
-            flipCard(eventParent);
-            console.log('card clicked');
-        }else if(eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
-            startGame();
-            console.log('start clicked');
+
+const shuffle = array => { //Shuffle algorithm based on the Fisher-Yates shuffling algorithm
+    const clonedArray = [...array]
+
+    for (let index = clonedArray.length - 1; index > 0; index--) {
+        const randomIndex = Math.floor(Math.random() * (index + 1))
+        const original = clonedArray[index]
+
+        clonedArray[index] = clonedArray[randomIndex]
+        clonedArray[randomIndex] = original
+    }
+
+    return clonedArray
+}
+
+const events = () =>{
+    document.addEventListener('click', event => {
+        const eventTarget = event.target
+        const eventParent = eventTarget.parentElement
+
+        if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
+            flipCard(eventParent)
+        } else if (eventTarget.nodeName === 'BUTTON' && !eventTarget.className.includes('disabled')) {
+            startGame()
         }
-    });
+    })
 };
 
 const startGame = () => {
-    state.gameStarted = true;
+    state.gameStarted = true
     classSelectors.start.classList.add('disabled')
 
-    classSelectors.moves.innerText = `Moves: ${state.flippedCards}`
+    state.loop = setInterval(() => {
+        state.totalTime++
+
+        classSelectors.moves.innerText = `${state.totalMoves} moves`
+    }, 1000)
 }
 
 const flipCard = card =>{
@@ -117,7 +137,8 @@ const flipCard = card =>{
     if (state.flippedCards === 2) {
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)')
 
-        if (flippedCards[0].innerText === flippedCards[1].innerText) {
+        if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) { //Probably not the best way to compare cards but it works for now 
+            console.log("Srcs: " + flippedCards[0].innerHTML + flippedCards[1].innerHTML)
             flippedCards[0].classList.add('matched')
             flippedCards[1].classList.add('matched')
         }
