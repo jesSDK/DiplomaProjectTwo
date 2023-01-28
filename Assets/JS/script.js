@@ -22,21 +22,21 @@ const state = { //Variables for keeping track of various parts of the game
 let cardImages = [];
 
 let kuromiOne = new Image(50,50);
-kuromiOne.src = '/Assets/Images/kuromiOne.png';
+kuromiOne.src = 'Assets/Images/kuromiOne.png';
 let kuromiTwo = new Image(50,50);
-kuromiTwo.src = '/Assets/Images/kuromiTwo.png';
+kuromiTwo.src = 'Assets/Images/kuromiTwo.png';
 let kuromiThree = new Image(50,50);
 kuromiThree.src = '/Assets/Images/kuromiThree.png';
 let kuromiFour = new Image(50,50);
-kuromiFour.src = '/Assets/Images/kuromiFour.png';
+kuromiFour.src = 'Assets/Images/kuromiFour.png';
 let kuromiFive = new Image(50,50);
-kuromiFive.src = '/Assets/Images/kuromiFive.png';
+kuromiFive.src = 'Assets/Images/kuromiFive.png';
 let kuromiSix = new Image(50,50);
-kuromiSix.src = '/Assets/Images/kuromiSix.png';
+kuromiSix.src = 'Assets/Images/kuromiSix.png';
 let kuromiSeven = new Image(50,50);
-kuromiSeven.src = '/Assets/Images/kuromiSeven.png';
+kuromiSeven.src = 'Assets/Images/kuromiSeven.png';
 let kuromiEight = new Image(50,50);
-kuromiEight.src = '/Assets/Images/kuromiEight.png';
+kuromiEight.src = 'Assets/Images/kuromiEight.png';
 
 cardImages.push(kuromiEight,kuromiSeven, kuromiSix, kuromiFive, kuromiFour, kuromiThree, kuromiTwo, kuromiOne);
 
