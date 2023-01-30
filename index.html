@@ -11,9 +11,8 @@
         <h1 class="header">
             <img class="logo" src="Assets/Images/Logo.png" alt="logo"> Kuromi Kards
         </h1>
-        <div class="Game-flex"><!--Main game flexbox-->
+        <div class="Game">
             <div class="controls">
-                <buton class ="btn btn--reg btn-start"><i class="fa-solid fa-play"></i></buton>
                 <buton class ="btn btn--reg btn-restart"><i class="fa-solid fa-repeat"></i></buton>
             </div>
             <div class="game-board">
@@ -22,10 +21,10 @@
                         <div class="cardFront"></div>  
                         <div class="cardBack"></div>
                 </div>
-                <div class="completed">Congratulations!</div>
         </div>
-        <div class="Score-flex"><!--Score flexbox-->
-            <p class="scores">Score: <span id="score">0</span></p>
+        <div class="completed"></div>
+        <div class="points">
+            <p class="score">Score: <span id="score">0</span></p>
             <p class="moves">Moves: <span id="moves">0</span></p>
         </div>  
         <script src="Assets/JS/script.js"></script>
