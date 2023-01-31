@@ -44,6 +44,12 @@ cardImages.push(kuromiEight,kuromiSeven, kuromiSix, kuromiFive, kuromiFour, kuro
 
 console.log(cardImages);
 const createGame = () => {
+    if(document.getElementsByClassName("win-text")){
+        const removeWin = document.getElementsByClassName('win-text');
+        while (removeWin.length > 0){
+        removeWin[0].parentNode.removeChild(removeWin[0]);
+    }
+    }
     //lets us set the dimension through our html
     const dimensions = classSelectors.board.getAttribute('data-dimension') //lets us set the dimension through our html
 
@@ -87,18 +93,18 @@ const pickRandom = (array, items) => { //Pick a random selection of cards from o
 
 
 const shuffle = array => { //Shuffle algorithm based on the Fisher-Yates shuffling algorithm
-    const clonedArray = [...array]
+    const clonedArray = [...array];
 
     for (let index = clonedArray.length - 1; index > 0; index--) {
-        const randomIndex = Math.floor(Math.random() * (index + 1))
-        const original = clonedArray[index]
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        const original = clonedArray[index];
 
-        clonedArray[index] = clonedArray[randomIndex]
-        clonedArray[randomIndex] = original
+        clonedArray[index] = clonedArray[randomIndex];
+        clonedArray[randomIndex] = original;
     }
 
-    return clonedArray
-}
+    return clonedArray;
+};
 
 
 const events = () =>{ //Event listener for cards and buttons
@@ -109,7 +115,7 @@ const events = () =>{ //Event listener for cards and buttons
         if (eventTarget.className.includes('card') && !eventParent.className.includes('flipped')) {
             flipCard(eventParent);
             
-        } else if (eventTarget.classList.contains('fa-repeat') && !eventTarget.className.includes('disabled')) {
+        } else if (eventTarget.classList.contains('play-again-btn') && !eventTarget.className.includes('disabled')) {
             createGame();
             console.log("Restart click");
         }
@@ -124,23 +130,40 @@ const startGame = () => { //start game and timer
     if (document.querySelectorAll('.card:not(.flipped)').length == 0) { //if there are no more cards to flip, you have won!
         console.log("Win condition met!");
         setTimeout(() => {
+            clearScreen();
             classSelectors.boardContainer.classList.add('flipped')
             classSelectors.compelted.innerHTML = `
                 <span class="win-text">
                     You won!<br />
                     with <span class="highlight">${state.totalMoves}</span> moves<br />
-                    and a score of  <span class="highlight">${state.score}</span>
+                    with a score of <span class="highlight">${state.score}</span>
                 </span>
+                <div class="play-again">
+                <buton class="play-again-btn" type="button">Click here to play again!</buton>
+                </div>
             `
-    
-            clearInterval(state.loop)
-        }, 1000)
+            clearInterval(state.loop);
+        }, 1000);
     }
-        state.totalTime++
-        classSelectors.moves.innerText = `${state.totalMoves} moves`
+        state.totalTime++;
+        classSelectors.moves.innerText = `${state.totalMoves} moves`;
     }, 1000);
 }
 
+const clearScreen = () => {
+    const removeBoard = document.getElementsByClassName('board');
+    while (removeBoard.length > 0){
+        removeBoard[0].parentNode.removeChild(removeBoard[0]);
+    }
+    const removePoints = document.getElementsByClassName('points');
+    while (removePoints.length > 0){
+        removePoints[0].parentNode.removeChild(removePoints[0]);
+    }
+    const removeReplay = document.getElementsByClassName('controls');
+    while (removeReplay.length > 0){
+        removeReplay[0].parentNode.removeChild(removeReplay[0]);
+    }
+}
 
 const flipCard = card =>{ //Flip cards on click, if match increase counter, 1 second delay
     state.flippedCards++;

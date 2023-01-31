@@ -4,3 +4,4 @@
 
 #Design
 -I opted to not use flexboxes in this design as it is a relatively simple page not requiring much positioning
+-Styled using the colour scheme of Kuromi 

@@ -2,21 +2,70 @@
 body {
     font-family: Quicksand, sans-serif;
     font-weight: 300;
-    color: #3a3a3a;
+    color: #474747;
     background-color: #FA80B5;
 }
 body p {
     font-family: Quicksand, sans-serif;
     font-weight: 300;
-    color: #3a3a3a;
+    color: #474747;
     font-size: 150%;
 }
-
+.title{
+    padding-left: 100px;
+}
 .logo{
     height: 80px;
+    float:left;
+    padding-left: 10px;
+}
+header{
+    background-color: white;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height: 80px;
+}
+.points{
+    padding-left: 40%;
+    font: 120%;
+}
+.play-again{
+    padding-top: 250px;
+}
+.play-again-btn{
+    position:absolute;
+    cursor: pointer;
+    color:white;
+    text-align: center;
+    width: 250px;
+    background-color: #474747;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+.win{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #ff0000;
 }
 .win-text{
-    font-size: 2em;
+    width:400px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: #474747;
+}
+.highlight {
+    color: #ffffff;
 }
 /*Game board and card styling*/
 .game-board{
@@ -55,7 +104,7 @@ body p {
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    background: #3a3a3a;
+    background: #474747;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
