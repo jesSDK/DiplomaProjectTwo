@@ -1,11 +1,28 @@
-#Inital
-#Bugs
--Ocassionally on a match, it wont register. (Currently unable to reproduce)
+# Kuromi Kards
+Kuromi kards is an online memory game, flip cards to remember their positions and match them up in as few flips as possible
 
-#Design
--I opted to not use flexboxes in this design as it is a relatively simple page not requiring much positioning
--Styled using the colour scheme of Kuromi 
+![Site Preview](https://imgur.com/GcEDbkS)
 
-HTML validated by https://validator.w3.org/
-CSS validated by https://jigsaw.w3.org/css-validator/validator
-JS validated by https://jshint.com/
+## Features
+The page opens with a game ready to play, with a score system built in, the less cards you flip to get a match, the more points you score!
+The website has a responsive design.
+
+## Bugs
+- Ocassionally on a match, it wont register. (Currently unable to reproduce)
+- On Deployment to GitHub Pages, sometimes one image will 404 for an unknown reason.
+
+## Design
+- I opted to not use flexboxes in this design as it is a relatively simple page not requiring much positioning
+- Styled using the colour scheme of Kuromi 
+- I also used images of Kuromi for the cards to keep consistent with the theme
+## Testing
+- HTML validated by https://validator.w3.org/
+- CSS validated by https://jigsaw.w3.org/css-validator/validator
+- JS validated by https://jshint.com/
+- Tested on a variety of browsers and devices
+
+## Deployment
+- The project was deployed on GitHub Pages
+    - Under repository settings visit 'code and automation' then click 'pages'
+    - Under 'source' I selected the master branch
+    - Save
