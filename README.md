@@ -9,7 +9,7 @@ The website has a responsive design.
 
 ## Bugs
 - Ocassionally on a match, it wont register. (Currently unable to reproduce)
-- On Deployment to GitHub Pages, sometimes one image will 404 for an unknown reason.
+- ~~On Deployment to GitHub Pages, sometimes one image will 404 for an unknown reason.~~ Fixed! There was a typo in the file name kuromIFour.png vs kuromiFour.png
 
 ## Design
 - I opted to not use flexboxes in this design as it is a relatively simple page not requiring much positioning
