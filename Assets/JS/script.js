@@ -1,6 +1,3 @@
-console.log("Script start");
-
-
 const classSelectors ={ //Get all the classes we need to target
     boardContainer: document.querySelector('.game-board'),
     board: document.querySelector('.board'),
@@ -42,7 +39,6 @@ kuromiEight.src = 'Assets/Images/kuromiEight.png';
 
 cardImages.push(kuromiEight,kuromiSeven, kuromiSix, kuromiFive, kuromiFour, kuromiThree, kuromiTwo, kuromiOne);
 //Game logic based on https://www.webtips.dev/memory-game-in-javascript
-console.log(cardImages);
 const createGame = () => {
     if(document.getElementsByClassName("win-text")){
         const removeWin = document.getElementsByClassName('win-text');
@@ -51,7 +47,7 @@ const createGame = () => {
     }
     }
     //lets us set the dimension through our html
-    const dimensions = classSelectors.board.getAttribute('data-dimension') //lets us set the dimension through our html
+    const dimensions = classSelectors.board.getAttribute('data-dimension'); //lets us set the dimension through our html
 
    if (dimensions % 2 !== 0){
        throw new Error("Dimensions must be an even number!"); //No uneven board dimensions
@@ -67,7 +63,7 @@ const createGame = () => {
            <div class="card-back"><img src="${item.src}"></div>
        </div>
    `).join('')}
-</div>`
+</div>`;
 
 
 const domParser = new DOMParser().parseFromString(cards, 'text/html');
@@ -77,7 +73,6 @@ classSelectors.board.replaceWith(domParser.querySelector('.board'));
 
 
 const pickRandom = (array, items) => { //Pick a random selection of cards from our array
-    console.log("pick random");
     const clonedArray = [...array];
     const randomCards = [];
 
@@ -87,7 +82,6 @@ const pickRandom = (array, items) => { //Pick a random selection of cards from o
         randomCards.push(clonedArray[randomIndex]);
         clonedArray.splice(randomIndex, 1);
     }
-    console.log("random cards: " + randomCards);
     return randomCards;
 };
 
@@ -127,7 +121,6 @@ const startGame = () => { //start game and timer
 
     state.loop = setInterval(() => {
     if (document.querySelectorAll('.card:not(.flipped)').length == 0) { //if there are no more cards to flip, you have won!
-        console.log("Win condition met!");
         setTimeout(() => {
             clearScreen();
             classSelectors.boardContainer.classList.add('flipped')
@@ -140,7 +133,7 @@ const startGame = () => { //start game and timer
                 <div class="play-again">
                 <buton class="play-again-btn" type="button">Click here to play again!</buton>
                 </div>
-            `
+            `;
             clearInterval(state.loop);
         }, 1000);
     }
@@ -162,7 +155,7 @@ const clearScreen = () => {
     while (removeReplay.length > 0){
         removeReplay[0].parentNode.removeChild(removeReplay[0]);
     }
-}
+};
 
 const flipCard = card =>{ //Flip cards on click, if match increase counter, 1 second delay
     state.flippedCards++;
@@ -181,29 +174,28 @@ const flipCard = card =>{ //Flip cards on click, if match increase counter, 1 se
         const flippedCards = document.querySelectorAll('.flipped:not(.matched)');
 
         if (flippedCards[0].innerHTML === flippedCards[1].innerHTML) { //Probably not the best way to compare cards but it works for now 
-            console.log("Srcs: " + flippedCards[0].innerHTML + flippedCards[1].innerHTML);
             flippedCards[0].classList.add('matched');
             flippedCards[1].classList.add('matched');
             
             var scoreRounded = Math.round(10-(state.totalMoves*0.04));
             state.score += scoreRounded;
-            classSelectors.score.innerText = `Score: ${state.score}`
+            classSelectors.score.innerText = `Score: ${state.score}`;
 
         }
 
         setTimeout(() => {
             flipBackCards();
-        }, 1000)
+        }, 1000);
     }
-}
+};
 
 
 const flipBackCards = () => {
     document.querySelectorAll('.card:not(.matched)').forEach(card => {
         card.classList.remove('flipped');
-    })
+    });
 
     state.flippedCards = 0;
-}
+};
 createGame();
 events();
