@@ -41,7 +41,7 @@ let kuromiEight = new Image(50,50);
 kuromiEight.src = 'Assets/Images/kuromiEight.png';
 
 cardImages.push(kuromiEight,kuromiSeven, kuromiSix, kuromiFive, kuromiFour, kuromiThree, kuromiTwo, kuromiOne);
-
+//Game logic based on https://www.webtips.dev/memory-game-in-javascript
 console.log(cardImages);
 const createGame = () => {
     if(document.getElementsByClassName("win-text")){
@@ -92,7 +92,7 @@ const pickRandom = (array, items) => { //Pick a random selection of cards from o
 };
 
 
-const shuffle = array => { //Shuffle algorithm based on the Fisher-Yates shuffling algorithm
+const shuffle = array => { //Shuffle algorithm based on the Fisher-Yates shuffling algorithm https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
     const clonedArray = [...array];
 
     for (let index = clonedArray.length - 1; index > 0; index--) {
@@ -116,8 +116,7 @@ const events = () =>{ //Event listener for cards and buttons
             flipCard(eventParent);
             
         } else if (eventTarget.classList.contains('play-again-btn') && !eventTarget.className.includes('disabled')) {
-            createGame();
-            console.log("Restart click");
+            location.reload();
         }
     });
 }
