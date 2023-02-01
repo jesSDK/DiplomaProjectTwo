@@ -181,8 +181,23 @@ body p {
         height: 70px;
     }
     .game-board{
-        top:-200px;
+        
         width:50%;
+    }
+}
+@media screen and (max-width:400px) {
+    header{
+        height: 60px;
+    }
+    .logo{
+        height: 60px;
+    }
+    .title{
+        padding-left: 130px;
+    }
+    .card{
+        width: 60px;
+        height: 60px;
     }
 }
 @media screen and (max-width:375px) {
@@ -196,11 +211,11 @@ body p {
         padding-left: 130px;
     }
     .card{
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
     .game-board{
-       margin-left: 8%
+       margin-left: 3%;
     }
 }
 @media screen and (max-width:320px) {
@@ -214,11 +229,28 @@ body p {
         padding-left: 130px;
     }
     .card{
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
     .game-board{
-       margin-left: 12%
+       margin-left: 10%
+    }
+    .title{
+        font-size: 16pt;
+    }
+}
+@media screen and (max-height:1000px) {
+    header{
+        height: 60px;
+    }
+    .logo{
+        height: 60px;
+    }
+    .title{
+        padding-left: 130px;
+    }
+    .game-board{
+        top:50px;
     }
     .title{
         font-size: 16pt;
