@@ -1,7 +1,7 @@
 # Kuromi Kards
 Kuromi kards is an online memory game, flip cards to remember their positions and match them up in as few flips as possible
 
-![Site Preview](https://imgur.com/GcEDbkS)
+![Site Preview](https://i.imgur.com/GcEDbkS.png)
 
 ## Features
 The page opens with a game ready to play, with a score system built in, the less cards you flip to get a match, the more points you score!
@@ -26,3 +26,4 @@ The website has a responsive design.
     - Under repository settings visit 'code and automation' then click 'pages'
     - Under 'source' I selected the master branch
     - Save
+- The project is live at https://jessdk.github.io/DiplomaProjectTwo/
