@@ -121,7 +121,7 @@ const startGame = () => { //start game and timer
 
     state.loop = setInterval(() => {
     if (document.querySelectorAll('.card:not(.flipped)').length == 0) { //if there are no more cards to flip, you have won!
-        const game = document.getElementsByClassName('Game')[0];
+        const game = document.getElementsByClassName('game')[0];
         game.style.visibility = 'hidden';
         setTimeout(() => {
             clearScreen();
