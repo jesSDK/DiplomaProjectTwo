@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@900&display=swap');
 header{
     width:100%;
     background-color: white;
@@ -30,7 +30,14 @@ body p {
     float:left;
     padding-left: 10px;
 }
+.landing{
+    padding-top: 5%;
+    padding-left: 33%;
+    padding-right: 33%;
+    font-size: 0.75vw;
+    text-align: center;
 
+}
 
 /*Styling for other parts of the game, such as win text points and buttons*/
 .points{
