@@ -46,16 +46,18 @@ body p {
 }
 .play-again{
     padding-top: 250px;
+    position: relative;
 }
 .play-again-btn{
-    position:absolute;
+    position: absolute;
     cursor: pointer;
     color:white;
     text-align: center;
-    width: 250px;
     background-color: #474747;
     border-radius: 10px;
-    transform: translate(-50%, -50%);
+    left:33%;
+    right:33%;
+    top:60%;
 }
 .win{
     position: absolute;

@@ -121,6 +121,8 @@ const startGame = () => { //start game and timer
 
     state.loop = setInterval(() => {
     if (document.querySelectorAll('.card:not(.flipped)').length == 0) { //if there are no more cards to flip, you have won!
+        const game = document.getElementsByClassName('Game')[0];
+        game.style.visibility = 'hidden';
         setTimeout(() => {
             clearScreen();
             classSelectors.boardContainer.classList.add('flipped')
@@ -128,11 +130,9 @@ const startGame = () => { //start game and timer
                 <span class="win-text">
                     You won!<br />
                     with <span class="highlight">${state.totalMoves}</span> moves<br />
-                    with a score of <span class="highlight">${state.score}</span>
+                    and a score of <span class="highlight">${state.score}</span>
                 </span>
-                <div class="play-again">
-                <buton class="play-again-btn" type="button">Click here to play again!</buton>
-                </div>
+                <button class="play-again-btn" type="button">Click here to play again!</button>
             `;
             clearInterval(state.loop);
         }, 1000);
