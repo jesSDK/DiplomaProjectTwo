@@ -31,10 +31,10 @@ body p {
     padding-left: 10px;
 }
 .landing{
-    padding-top: 5%;
-    padding-left: 33%;
-    padding-right: 33%;
-    font-size: 0.75vw;
+    padding-top: 8%;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 1.5vh;
     text-align: center;
 
 }
@@ -145,13 +145,31 @@ body p {
 }
 
 /*Responsiveness and scaling*/
+@media screen and (max-height:1000px) {
+    header{
+        height: 60px;
+    }
+    .logo{
+        height: 60px;
+    }
+    .title{
+        padding-left: 130px;
+    }
+    .game-board{
+        top:50px;
+    }
+    .title{
+        font-size: 16pt;
+    }
+}
 @media screen and (max-width:800px) {
     .card{
         width: 87px;
         height: 87px;
     }
-    .game-board{
-        left:-30px;
+    .landing{
+        padding-top: 15%;
+        font-size: 2.3vw;
     }
 }
 @media screen and (max-width:500px) {
@@ -188,7 +206,6 @@ body p {
         height: 70px;
     }
     .game-board{
-        
         width:50%;
     }
 }
@@ -241,23 +258,6 @@ body p {
     }
     .game-board{
        margin-left: 10%
-    }
-    .title{
-        font-size: 16pt;
-    }
-}
-@media screen and (max-height:1000px) {
-    header{
-        height: 60px;
-    }
-    .logo{
-        height: 60px;
-    }
-    .title{
-        padding-left: 130px;
-    }
-    .game-board{
-        top:50px;
     }
     .title{
         font-size: 16pt;
